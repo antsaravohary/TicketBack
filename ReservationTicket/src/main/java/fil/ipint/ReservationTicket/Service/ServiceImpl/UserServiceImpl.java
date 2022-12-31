@@ -7,10 +7,12 @@ import fil.ipint.ReservationTicket.Exception.UserAlreadyExist;
 import fil.ipint.ReservationTicket.Respository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://127.0.0.1:5173")
 @RestController
 @Service("/userService")
 public class UserServiceImpl implements UtilisateurService {
@@ -49,5 +51,14 @@ public class UserServiceImpl implements UtilisateurService {
         return (List<utilisateur>) userRepository.findAll();
     }
 
+    @Override
+    public utilisateur login(utilisateur user) throws UserAlreadyExist {
+        utilisateur us = userRepository.findByEmail(user.getEmail());
+        System.out.println(us);
+        if ( us != null){
+            return us;
+        }
+        return null;
 
+    }
 }

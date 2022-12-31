@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin(origins = "/*")
+@CrossOrigin(origins = "*")
 @RequestMapping("artistes")
 public class ArtisteController {
 

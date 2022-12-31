@@ -11,7 +11,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "/*")
+@CrossOrigin(origins = "*")
 @RequestMapping("/concerts")
 public class ConcertController {
 

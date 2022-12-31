@@ -17,4 +17,5 @@ public interface UtilisateurService {
     List<utilisateur> getAllUser();
 
 
+    utilisateur login(utilisateur user) throws UserAlreadyExist;
 }
