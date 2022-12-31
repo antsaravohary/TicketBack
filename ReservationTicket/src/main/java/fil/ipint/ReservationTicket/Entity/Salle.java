@@ -11,8 +11,6 @@ public class Salle {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	
 	private Long id;
 	private String nameSalle;
 	private int nb_place;
@@ -34,7 +32,7 @@ public class Salle {
 	}
 
 	public Salle() {
-
+		super();
 	}
 
 

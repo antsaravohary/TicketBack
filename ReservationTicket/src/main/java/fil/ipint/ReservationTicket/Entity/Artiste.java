@@ -3,8 +3,6 @@ package fil.ipint.ReservationTicket.Entity;
 
 
 
-
-
 import javax.persistence.*;
 
 
@@ -21,8 +19,7 @@ public class Artiste {
 	private Concert concert ;
 
 
-	public Artiste() {
-	}
+
 
 	public Artiste(Long id, String name, String description,Concert concert) {
 		this.id = id;
@@ -30,6 +27,14 @@ public class Artiste {
 		this.description=description;
 		this.concert=concert;
 
+	}
+	public Artiste( String name, String description) {
+		this.nameArtiste=name;
+		this.description=description;
+	}
+
+	public Artiste() {
+		super();
 	}
 
 

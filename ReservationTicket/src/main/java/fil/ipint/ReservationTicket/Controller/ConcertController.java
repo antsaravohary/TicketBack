@@ -19,7 +19,6 @@ public class ConcertController {
     private ConcertService concertService;
 
 
-
     @PostMapping("createConcert")
     public Concert createconcert(@RequestBody Concert concert ){
         return concertService.createConcert(concert);
