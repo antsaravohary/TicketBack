@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import java.util.Optional;
 
 
-@Controller
+@RestController
 @CrossOrigin(origins = "/*")
 @RequestMapping("/concerts")
 public class ConcertController {

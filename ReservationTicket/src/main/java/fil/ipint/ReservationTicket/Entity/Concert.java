@@ -21,7 +21,7 @@ public class Concert {
 	private String titre;
 	private LocalDate date ;
 	private double prix ;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Adresse adresse;
 	@OneToMany(mappedBy = "concert")
 	private Collection<Artiste> artistes= new ArrayList<Artiste>();

@@ -16,7 +16,7 @@ public class Salle {
 	private Long id;
 	private String nameSalle;
 	private int nb_place;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Concert concert;
 
 	

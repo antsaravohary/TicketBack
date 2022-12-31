@@ -12,12 +12,12 @@ public class Billet {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private utilisateur user;
 	private Date dateAchat;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Salle salle;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Concert concert ;
 
 
