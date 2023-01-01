@@ -11,12 +11,10 @@ public class Salle {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	
 	private Long id;
 	private String nameSalle;
 	private int nb_place;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Concert concert;
 
 	
@@ -34,7 +32,7 @@ public class Salle {
 	}
 
 	public Salle() {
-
+		super();
 	}
 
 

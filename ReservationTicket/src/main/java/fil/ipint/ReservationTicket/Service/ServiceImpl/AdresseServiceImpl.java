@@ -5,8 +5,10 @@ import fil.ipint.ReservationTicket.Respository.AdresseRepository;
 import fil.ipint.ReservationTicket.Service.ServiceInter.AdresseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "http://127.0.0.1:5173")
 @RestController
 @Service(value="adresseService")
 public class AdresseServiceImpl implements AdresseService {

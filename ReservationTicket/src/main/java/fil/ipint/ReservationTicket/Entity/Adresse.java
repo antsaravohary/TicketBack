@@ -30,6 +30,10 @@ public class Adresse {
 
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getVille() {
 		return ville;
 	}

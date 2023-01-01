@@ -3,8 +3,6 @@ package fil.ipint.ReservationTicket.Entity;
 
 
 
-
-
 import javax.persistence.*;
 
 
@@ -17,12 +15,11 @@ public class Artiste {
 	private Long id;
 	private String nameArtiste;
 	private String description;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Concert concert ;
 
 
-	public Artiste() {
-	}
+
 
 	public Artiste(Long id, String name, String description,Concert concert) {
 		this.id = id;
@@ -31,7 +28,19 @@ public class Artiste {
 		this.concert=concert;
 
 	}
+	public Artiste( String name, String description) {
+		this.nameArtiste=name;
+		this.description=description;
+	}
 
+	public Artiste() {
+		super();
+	}
+
+
+	public Long getId() {
+		return id;
+	}
 
 	public String getName() {
 		return nameArtiste;

@@ -14,9 +14,10 @@ import fil.ipint.ReservationTicket.Respository.UserRepository;
 import fil.ipint.ReservationTicket.Service.ServiceInter.BilletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@CrossOrigin(origins = "http://127.0.0.1:5173")
 @RestController
 @Service("BilletService")
 public class BilletServiceImpl implements BilletService {

@@ -7,11 +7,13 @@ import fil.ipint.ReservationTicket.Service.ServiceInter.SalleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
 
+@CrossOrigin(origins = "http://127.0.0.1:5173")
 @RestController
 @Service("/salleService")
 public class SalleServiceImpl implements SalleService {

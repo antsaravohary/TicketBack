@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "/*")
+@CrossOrigin(origins = "*")
 @RequestMapping("/utilisateur")
 public class UtilisateurController {
 
@@ -44,6 +44,9 @@ public class UtilisateurController {
     }
 
 
-
+    @PostMapping("/login")
+    public utilisateur loginUser(@RequestBody utilisateur user) throws UserAlreadyExist {
+        return utilisateurService.login(user);
+    }
 
 }
