@@ -18,7 +18,7 @@ public class BilletController {
 
 
      /** resrver un billet*/
-     @PostMapping("/email")
+     @PostMapping("/email/{email}")
      public Billet reserverBilet(@PathVariable(value="email") String email) throws UserNotFound {
           return (Billet) billetService.ReserverBillet(email);
 

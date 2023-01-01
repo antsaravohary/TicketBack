@@ -17,7 +17,7 @@ public class Concert {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 
-	private Long idConcert;
+	private Long id;
 	private String titre;
 	private LocalDate date ;
 	private double prix ;
@@ -37,7 +37,7 @@ public class Concert {
 
 
 	public Concert(Long id , String titre, LocalDate date, double prix,ArrayList<Artiste> artistes,ArrayList<Salle> salle,ArrayList<Billet> billet) {
-		this.idConcert=id;
+		this.id=id;
 		this.titre = titre;
 		this.date = date;
 		this.prix = prix;
@@ -62,10 +62,10 @@ public class Concert {
 
 
 	public Long getId() {
-		return idConcert;
+		return id;
 	}
 	public void setId(Long id) {
-		this.idConcert = id;
+		this.id = id;
 	}
 
 	public String getTitre(String name) {

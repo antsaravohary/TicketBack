@@ -25,7 +25,7 @@ public class ConcertController {
 
     }
 
-    @GetMapping("/getConcert")
+    @GetMapping("/getConcert/{id}")
     public Optional<Concert> getconcertById(@PathVariable(value="id") Long id) {
         return concertService.getConcertById(id);
 
