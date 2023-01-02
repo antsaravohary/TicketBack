@@ -17,6 +17,7 @@ public  interface BilletService {
 
     Optional<Billet> getAllBilletOfUser(String email) throws UserNotFound;
 
-    void saveBillet (Billet billet);
     void updateBillet(Billet billet, utilisateur user);
+
+    void saveBillet(Billet billet);
 }

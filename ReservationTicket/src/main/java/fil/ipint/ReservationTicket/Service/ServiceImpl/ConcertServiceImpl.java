@@ -37,10 +37,6 @@ public class ConcertServiceImpl implements ConcertService {
         return (List<Concert>) concertRepository.findAll();
     }
 
-    @Override
-    public void addConcert(Concert concert) {
-
-    }
 
     @Override
     public void updateConcert(Concert concert) {

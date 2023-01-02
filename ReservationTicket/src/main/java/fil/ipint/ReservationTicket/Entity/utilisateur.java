@@ -22,7 +22,7 @@ public class utilisateur {
     private String adresse;
     private String email;
     private String password;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnore
     private Collection<Billet> billet;
 

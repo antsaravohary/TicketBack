@@ -15,7 +15,7 @@ public class Artiste {
 	private Long id;
 	private String nameArtiste;
 	private String description;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	private Concert concert;
 
 

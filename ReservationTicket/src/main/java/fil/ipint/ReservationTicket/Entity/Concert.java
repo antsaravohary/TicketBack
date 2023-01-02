@@ -25,11 +25,11 @@ public class Concert {
 	private double prix ;
 
 	private String adresse;
-	@OneToMany(mappedBy = "concert")
+	@OneToMany(mappedBy = "concert" , cascade = CascadeType.REMOVE)
 	private Collection<Artiste> artistes= new ArrayList<Artiste>();
-	@OneToMany(mappedBy = "concert")
+	@OneToMany(mappedBy = "concert", cascade = CascadeType.REMOVE)
 	private Collection<Salle> salle= new ArrayList<Salle>() ;
-	@OneToMany(mappedBy = "concert")
+	@OneToMany(mappedBy = "concert", cascade = CascadeType.REMOVE)
 	@JsonIgnore
 	private Collection<Billet> billet= new ArrayList<Billet>();
 

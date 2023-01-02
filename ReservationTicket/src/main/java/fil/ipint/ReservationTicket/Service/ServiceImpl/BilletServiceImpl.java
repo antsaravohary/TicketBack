@@ -1,15 +1,14 @@
 package fil.ipint.ReservationTicket.Service.ServiceImpl;
 
 
-import java.util.Date;
 import java.util.Optional;
 
 import fil.ipint.ReservationTicket.Entity.Billet;
 import fil.ipint.ReservationTicket.Entity.Concert;
-import fil.ipint.ReservationTicket.Entity.Salle;
 import fil.ipint.ReservationTicket.Entity.utilisateur;
 import fil.ipint.ReservationTicket.Exception.UserNotFound;
 import fil.ipint.ReservationTicket.Respository.BilletRepository;
+import fil.ipint.ReservationTicket.Respository.ConcertRepository;
 import fil.ipint.ReservationTicket.Respository.UserRepository;
 import fil.ipint.ReservationTicket.Service.ServiceInter.BilletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +25,12 @@ public class BilletServiceImpl implements BilletService {
     private BilletRepository billetRepository;
     @Autowired
     private UserRepository userRepository;
+    private final ConcertRepository concertRepository;
 
-    public BilletServiceImpl(BilletRepository billetRepository) {
+    public BilletServiceImpl(BilletRepository billetRepository,
+                             ConcertRepository concertRepository) {
         this.billetRepository = billetRepository;
+        this.concertRepository = concertRepository;
     }
 
     @Override
@@ -68,6 +70,8 @@ public class BilletServiceImpl implements BilletService {
         return billetRepository.findById(user.getIdUser());
     }
 
+
+
     @Override
     public void updateBillet(Billet billet, utilisateur user) {
 
@@ -77,7 +81,12 @@ public class BilletServiceImpl implements BilletService {
     }
 
     @Override
-     public void saveBillet (Billet billet){
+     public void saveBillet(Billet billet){
+        utilisateur user = userRepository.findByEmail(billet.getUser().getEmail());
+        Concert concert = concertRepository.findConcertByTitre(billet.getConcert().getTitre());
+        billet.setUser(user);
+        billet.setConcert(concert);
+
         billetRepository.save(billet);
     }
 

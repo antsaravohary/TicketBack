@@ -25,11 +25,9 @@ public class Billet {
 	private Concert concert ;
 
 
-	public Billet(Long id, Date dateAchat, Concert concert) {
+	public Billet(Long id, Date dateAchat) {
 		this.id = id;
 		this.dateAchat = dateAchat;
-
-		this.concert = concert;
 
 	}
 

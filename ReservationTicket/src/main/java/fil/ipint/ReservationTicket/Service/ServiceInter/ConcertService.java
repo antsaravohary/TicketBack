@@ -11,7 +11,6 @@ public interface ConcertService {
     Concert createConcert(Concert concert);
     Optional<Concert> getConcertById(Long id);
     List<Concert> getAllConcert();
-    void addConcert(Concert concert);
     void updateConcert(Concert concert);
 
     void deleteConcert(Long id);
