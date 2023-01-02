@@ -41,12 +41,8 @@ public class BilletServiceImpl implements BilletService {
         Billet billet = new  Billet();
         Concert concert =new Concert();
         billet.setConcert(concert);
-        billet.setDateAchat(new Date());
-        billet.setId(3456);
-        Salle salle= new Salle("salle03",50);
-        billet.setSalle(salle);
-
-        return (Billet) billetRepository.save(billet);
+        billet.setUser(user);
+        return billetRepository.save(billet);
 
     }
 

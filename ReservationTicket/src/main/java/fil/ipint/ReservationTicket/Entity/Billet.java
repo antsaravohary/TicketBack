@@ -3,6 +3,7 @@ package fil.ipint.ReservationTicket.Entity;
 
 
 import net.bytebuddy.build.ToStringPlugin;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 import javax.persistence.*;
@@ -16,9 +17,9 @@ public class Billet {
 	private Long id;
 	@ManyToOne(cascade = CascadeType.ALL)
 	private utilisateur user;
+	@CreationTimestamp
 	private Date dateAchat;
-	@OneToOne(cascade = CascadeType.ALL)
-	private Salle salle;
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Concert concert ;
 
@@ -28,7 +29,7 @@ public class Billet {
 	public Billet(Long id, Date dateAchat, Salle salle, Concert concert) {
 		this.id = id;
 		this.dateAchat = dateAchat;
-		this.salle = salle;
+
 		this.concert = concert;
 		
 	}
@@ -41,10 +42,10 @@ public class Billet {
 	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	/**public Client getClient() {
 		return client;
@@ -62,14 +63,6 @@ public class Billet {
 	}
 
 
-	public Salle getSalle() {
-		return salle;
-	}
-	public void setSalle(Salle salle) {
-		this.salle = salle;
-	}
-
-	
 	public Concert getConcert() {
 		return concert;
 	}

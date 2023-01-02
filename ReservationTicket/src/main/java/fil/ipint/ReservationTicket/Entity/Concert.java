@@ -21,8 +21,8 @@ public class Concert {
 	private String titre;
 	private LocalDate date ;
 	private double prix ;
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Adresse adresse;
+
+	private String adresse;
 	@OneToMany(mappedBy = "concert")
 	private Collection<Artiste> artistes= new ArrayList<Artiste>();
 	@OneToMany(mappedBy = "concert")
@@ -36,29 +36,28 @@ public class Concert {
 	}
 
 
-	public Concert(Long id , String titre, LocalDate date, double prix,ArrayList<Artiste> artistes,ArrayList<Salle> salle,ArrayList<Billet> billet) {
+	public String getTitre() {
+		return titre;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public Concert(Long id , String titre, LocalDate date, double prix, String adresse, ArrayList<Artiste> artistes, ArrayList<Salle> salle, ArrayList<Billet> billet) {
 		this.id=id;
 		this.titre = titre;
 		this.date = date;
 		this.prix = prix;
+		this.adresse= adresse;
 		this.artistes=artistes;
 		this.salle=salle;
 		this.billet=billet;
-
-
 	}
-
-
-
-
-
-	public Adresse getAdresse() {
-		return adresse;
-	}
-	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
-	}
-
 
 
 	public Long getId() {
