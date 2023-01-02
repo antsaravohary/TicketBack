@@ -3,6 +3,8 @@ package fil.ipint.ReservationTicket.Entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -21,6 +23,7 @@ public class utilisateur {
     private String email;
     private String password;
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private Collection<Billet> billet;
 
     private String role = "USER";

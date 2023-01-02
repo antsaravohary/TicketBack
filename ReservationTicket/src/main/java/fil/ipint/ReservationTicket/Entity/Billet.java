@@ -2,6 +2,7 @@ package fil.ipint.ReservationTicket.Entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import net.bytebuddy.build.ToStringPlugin;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -11,7 +12,7 @@ import javax.persistence.*;
 
 @Entity
 public class Billet {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -24,14 +25,12 @@ public class Billet {
 	private Concert concert ;
 
 
-
-
-	public Billet(Long id, Date dateAchat, Salle salle, Concert concert) {
+	public Billet(Long id, Date dateAchat, Concert concert) {
 		this.id = id;
 		this.dateAchat = dateAchat;
 
 		this.concert = concert;
-		
+
 	}
 
 	public Billet(){
@@ -79,8 +78,8 @@ public class Billet {
 	}
 
 
-	
-	
-	
+
+
+
 
 }

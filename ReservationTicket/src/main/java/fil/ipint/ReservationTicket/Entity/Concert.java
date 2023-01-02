@@ -1,6 +1,8 @@
 package fil.ipint.ReservationTicket.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,6 +30,7 @@ public class Concert {
 	@OneToMany(mappedBy = "concert")
 	private Collection<Salle> salle= new ArrayList<Salle>() ;
 	@OneToMany(mappedBy = "concert")
+	@JsonIgnore
 	private Collection<Billet> billet= new ArrayList<Billet>();
 
 
